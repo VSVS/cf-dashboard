@@ -5,6 +5,7 @@ import {
 } from "@material-ui/core/styles";
 
 const defaultTheme = createMuiTheme();
+
 const { palette, shape } = createMuiTheme({
   palette: {
     primary: {
@@ -27,13 +28,9 @@ const { palette, shape } = createMuiTheme({
   },
 });
 
-const theme = createMuiTheme({
-  palette,
+const { typography } = createMuiTheme({
   typography: {
     fontSize: 12,
-  },
-  shape,
-  typography: {
     h1: {
       fontFamily: "Montserrat",
       fontSize: "48px",
@@ -42,7 +39,7 @@ const theme = createMuiTheme({
     h2: {
       fontFamily: "Montserrat",
       fontSize: "36px",
-      fontWeight: 800,
+      fontWeight: 500,
     },
     h3: {
       fontFamily: "Montserrat",
@@ -60,6 +57,12 @@ const theme = createMuiTheme({
       fontWeight: 600,
     },
   },
+});
+
+const theme = createMuiTheme({
+  palette,
+  shape,
+  typography,
 });
 
 export const ThemeWrapper = ({ children }) => (
