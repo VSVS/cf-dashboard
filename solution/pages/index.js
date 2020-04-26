@@ -59,7 +59,9 @@ const Main = ({ employees }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/employees");
+  const res = await fetch(
+    "https://employeedashboard-53hxc2fw3.now.sh/api/employees"
+  );
   const employees = await res.json();
 
   return {
