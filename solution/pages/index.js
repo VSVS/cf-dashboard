@@ -59,9 +59,7 @@ const Main = ({ employees }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(
-    "https://employeedashboard-53hxc2fw3.now.sh/api/employees"
-  );
+  const res = await fetch("https://cf-dashboard.now.sh/api/employees");
   const employees = await res.json();
 
   return {
