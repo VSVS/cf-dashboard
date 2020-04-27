@@ -20,16 +20,12 @@ export default function EmployeeTable({ employees, onSelect }) {
         },
       },
       {
-        field: "firstName",
+        field: "name.first",
         title: "First Name",
-        render: (rowData) => `${rowData.name.first}`,
-        searchable: true,
       },
       {
-        field: "lastName",
+        field: "name.last",
         title: "Last Name",
-        render: (rowData) => `${rowData.name.last}`,
-        searchable: true,
       },
       {
         field: "job_title",
