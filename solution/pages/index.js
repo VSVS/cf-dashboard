@@ -13,10 +13,7 @@ import EmployeeTable from "../comps/Table";
 import Employee from "../comps/Employee";
 import SideDrawer from "../comps/SideDrawer";
 
-const useStyles = makeStyles((theme) => ({}));
-
 const Main = () => {
-  const classes = useStyles();
   const [employee, setEmployee] = React.useState({});
   const [open, setOpen] = React.useState(false);
 
