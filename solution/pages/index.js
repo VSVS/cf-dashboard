@@ -5,7 +5,8 @@ import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
-import fetch from "node-fetch";
+//import fetch from "node-fetch";
+import employees from "../utils/employees";
 
 import Layout from "../comps/Layout";
 import EmployeeTable from "../comps/Table";
@@ -14,7 +15,7 @@ import SideDrawer from "../comps/SideDrawer";
 
 const useStyles = makeStyles((theme) => ({}));
 
-const Main = ({ employees }) => {
+const Main = () => {
   const classes = useStyles();
   const [employee, setEmployee] = React.useState({});
   const [open, setOpen] = React.useState(false);
@@ -57,6 +58,8 @@ const Main = ({ employees }) => {
     </Layout>
   );
 };
+
+// Issue with api deployment on platform. Using local mock employee data instead
 
 // export async function getInitialProps() {
 //   const res = await fetch("https://cf-dashboard.now.sh/api/employees");
