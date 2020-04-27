@@ -5,7 +5,7 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Titlebar from "./Titlebar";
 
-const width = "500px",
+const width = "100%",
   height = "100%";
 
 const useStyles = makeStyles((theme) => ({
