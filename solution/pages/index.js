@@ -58,7 +58,7 @@ const Main = ({ employees }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getInitialProps() {
   const res = await fetch("https://cf-dashboard.now.sh/api/employees");
   const employees = await res.json();
 
