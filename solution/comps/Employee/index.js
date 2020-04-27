@@ -24,10 +24,21 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-evenly",
+    marginBottom: "20px",
+    marginTop: "20px",
   },
   divider: {
     width: "100%",
     backgroundColor: "#4e9a923b",
+  },
+  list: {
+    paddingLeft: "10px",
+    paddingBottom: "10px",
+    listStyle: "none",
+    textAlign: "left",
+  },
+  mont: {
+    fontFamily: "Montserrat",
   },
 }));
 
@@ -50,9 +61,9 @@ export function EmployeeForm({ employee }) {
           <div>
             <img src={employee.headshot.large} className={classes.pic} />
           </div>
-          <h2>
+          <h1 className={classes.mont}>
             {employee.name.first} {employee.name.last}
-          </h2>
+          </h1>
           <h4 className={classes.title}>
             {employee.department} <span style={{ margin: "0px 3px" }}>| </span>
             {employee.job_title}
@@ -67,7 +78,7 @@ export function EmployeeForm({ employee }) {
       <Grid container>
         <Grid item xs={12} md={4}>
           <MetaData>
-            <h2 className={classes.category}>
+            <h2 className={classes.category + " " + classes.mont}>
               <LocationOnIcon color="primary" /> Address
             </h2>
             <Box
@@ -84,21 +95,16 @@ export function EmployeeForm({ employee }) {
         </Grid>
         <Grid item xs={12} md={4}>
           <MetaData>
-            <h2 className={classes.category}>
+            <h2 className={classes.category + " " + classes.mont}>
               <FormatListBulletedIcon color="primary" /> Skills
             </h2>
             <ul>
               {employee.skills.length > 0 ? (
-                employee.skills.map((skill) => {
-                  return (
-                    <li
-                      style={{ textAlign: "left", paddingLeft: "5px" }}
-                      key={skill.id}
-                    >
-                      {skill.id}
-                    </li>
-                  );
-                })
+                employee.skills.map((skill) => (
+                  <li className={classes.list} key={skill.id}>
+                    - {skill.id}
+                  </li>
+                ))
               ) : (
                 <li>N/A</li>
               )}
@@ -107,10 +113,10 @@ export function EmployeeForm({ employee }) {
         </Grid>
         <Grid item xs={12} md={4}>
           <MetaData>
-            <h2 className={classes.category}>
+            <h2 className={classes.category + " " + classes.mont}>
               <WorkIcon color="primary" /> Mananger
             </h2>
-            {employee.is_manager ? "Yes" : "No"}
+            <p>{employee.is_manager ? "Yes" : "No"}</p>
           </MetaData>
         </Grid>
       </Grid>
