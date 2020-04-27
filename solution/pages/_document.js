@@ -2,7 +2,6 @@ import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/styles";
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
-import "typeface-montserrat";
 const theme = responsiveFontSizes(createMuiTheme());
 
 class MyDocument extends Document {
@@ -16,6 +15,10 @@ class MyDocument extends Document {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap"
+            rel="stylesheet"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
